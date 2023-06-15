@@ -198,7 +198,7 @@ class RemunProses extends BaseController
 
     public function data($nip, $bln)
     {
-        $data = $this->remunModel->where('nip', $nip, 'bulan', $bln)->first();
+        $data = $this->remunModel->where('nip', $nip)->where('bulan', $bln)->first();
         echo json_encode($data);
     }
 

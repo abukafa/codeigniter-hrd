@@ -181,10 +181,10 @@
                     <tr class="text-left">
                         <td class="border-left pl-2">- Kesehatan</td>
                         <td>:</td>
-                        <td class="text-right border-right pr-2"><?= number_format($rem['t_jab'], 0, ',', '.') ?></td>
+                        <td class="text-right border-right pr-2"><?= number_format($rem['t_kes'], 0, ',', '.') ?></td>
                         <td>- Spesial</td>
                         <td>:</td>
-                        <td class="text-right border-right pr-2"><?= number_format($rem['t_atr'], 0, ',', '.') ?></td>
+                        <td class="text-right border-right pr-2"><?= number_format($rem['t_spc'], 0, ',', '.') ?></td>
                         <td class="border-left pl-2"></td>
                         <td></td>
                         <td class="border-right pr-2"></td>

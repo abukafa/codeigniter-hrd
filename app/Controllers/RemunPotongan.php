@@ -83,15 +83,15 @@ class RemunPotongan extends BaseController
             'id' => $this->request->getVar('id'),
             'nip' => $this->request->getVar('nip'),
             'nama' => $this->request->getVar('nama'),
-            'p_srg' => $this->request->getVar('p_srg'),
-            'p_atr' => $this->request->getVar('p_atr'),
-            'p_kes' => $this->request->getVar('p_kes'),
-            'p_rmh' => $this->request->getVar('p_rmh'),
-            'p_bon' => $this->request->getVar('p_bon'),
-            'p_htg' => $this->request->getVar('p_htg'),
-            'p_zkt' => $this->request->getVar('p_zkt'),
-            'p_inf' => $this->request->getVar('p_inf'),
-            'p_lin' => $this->request->getVar('p_lin')
+            'p_srg' => (int)$this->request->getVar('p_srg'),
+            'p_atr' => (int)$this->request->getVar('p_atr'),
+            'p_kes' => (int)$this->request->getVar('p_kes'),
+            'p_rmh' => (int)$this->request->getVar('p_rmh'),
+            'p_bon' => (int)$this->request->getVar('p_bon'),
+            'p_htg' => (int)$this->request->getVar('p_htg'),
+            'p_zkt' => (int)$this->request->getVar('p_zkt'),
+            'p_inf' => (int)$this->request->getVar('p_inf'),
+            'p_lin' => (int)$this->request->getVar('p_lin')
         ];
         $this->potonganModel->insert($data);
         flash('Berhasil', 'Menambah Data Potongan..');
@@ -103,15 +103,15 @@ class RemunPotongan extends BaseController
         $data = [
             'nip' => $this->request->getVar('nip'),
             'nama' => $this->request->getVar('nama'),
-            'p_srg' => $this->request->getVar('p_srg'),
-            'p_atr' => $this->request->getVar('p_atr'),
-            'p_kes' => $this->request->getVar('p_kes'),
-            'p_rmh' => $this->request->getVar('p_rmh'),
-            'p_bon' => $this->request->getVar('p_bon'),
-            'p_htg' => $this->request->getVar('p_htg'),
-            'p_zkt' => $this->request->getVar('p_zkt'),
-            'p_inf' => $this->request->getVar('p_inf'),
-            'p_lin' => $this->request->getVar('p_lin'),
+            'p_srg' => (int)$this->request->getVar('p_srg'),
+            'p_atr' => (int)$this->request->getVar('p_atr'),
+            'p_kes' => (int)$this->request->getVar('p_kes'),
+            'p_rmh' => (int)$this->request->getVar('p_rmh'),
+            'p_bon' => (int)$this->request->getVar('p_bon'),
+            'p_htg' => (int)$this->request->getVar('p_htg'),
+            'p_zkt' => (int)$this->request->getVar('p_zkt'),
+            'p_inf' => (int)$this->request->getVar('p_inf'),
+            'p_lin' => (int)$this->request->getVar('p_lin'),
             'acc' => false
         ];
         $this->potonganModel->update($id, $data);

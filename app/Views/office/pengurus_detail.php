@@ -442,7 +442,6 @@ $this->section('content');
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="btn-close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Upload & Crop Image</h4>
             </div>
             <div class="modal-body">
@@ -475,6 +474,8 @@ $this->section('content');
 <!-- Parsley js -->
 <script type="text/javascript" src="<?= base_url() ?>/assets/plugins/parsleyjs/parsley.min.js"></script>
 <script>
+    var base_url = <?php echo json_encode(base_url()); ?>;
+
     $(document).ready(function() {
         $('form').parsley();
     });
@@ -531,8 +532,7 @@ $this->section('content');
                 size: 'viewport'
             }).then(function(response) {
                 $.ajax({
-                    url: "/assets/plugins/croppie/upload.php?nip=" + nip,
-                    // url: "/pengurus/upload/" + nip,
+                    url: base_url + "assets/plugins/croppie/upload.php?nip=" + nip,
                     type: "POST",
                     data: {
                         "image": response

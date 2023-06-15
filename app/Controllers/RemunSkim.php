@@ -60,14 +60,14 @@ class RemunSkim extends BaseController
             'id' => $this->request->getVar('id'),
             'golongan' => $this->request->getVar('golongan'),
             'sub_golongan' => $this->request->getVar('sub_golongan'),
-            'honor' => $this->request->getVar('honor'),
-            'makan' => $this->request->getVar('makan'),
-            'transport' => $this->request->getVar('transport'),
-            't_jab' => $this->request->getVar('t_jab'),
-            't_stt' => $this->request->getVar('t_stt'),
-            't_ank' => $this->request->getVar('t_ank'),
-            't_prg' => $this->request->getVar('t_prg'),
-            't_kes' => $this->request->getVar('t_kes')
+            'honor' => (int)$this->request->getVar('honor'),
+            'makan' => (int)$this->request->getVar('makan'),
+            'transport' => (int)$this->request->getVar('transport'),
+            't_jab' => (int)$this->request->getVar('t_jab'),
+            't_stt' => (int)$this->request->getVar('t_stt'),
+            't_ank' => (int)$this->request->getVar('t_ank'),
+            't_prg' => (int)$this->request->getVar('t_prg'),
+            't_kes' => (int)$this->request->getVar('t_kes')
         ];
         $this->skimModel->insert($data);
         flash('Berhasil', 'Menambah DataSkim..');
@@ -79,14 +79,14 @@ class RemunSkim extends BaseController
         $data = [
             'golongan' => $this->request->getVar('golongan'),
             'sub_golongan' => $this->request->getVar('sub_golongan'),
-            'honor' => $this->request->getVar('honor'),
-            'makan' => $this->request->getVar('makan'),
-            'transport' => $this->request->getVar('transport'),
-            't_jab' => $this->request->getVar('t_jab'),
-            't_stt' => $this->request->getVar('t_stt'),
-            't_ank' => $this->request->getVar('t_ank'),
-            't_prg' => $this->request->getVar('t_prg'),
-            't_kes' => $this->request->getVar('t_kes'),
+            'honor' => (int)$this->request->getVar('honor'),
+            'makan' => (int)$this->request->getVar('makan'),
+            'transport' => (int)$this->request->getVar('transport'),
+            't_jab' => (int)$this->request->getVar('t_jab'),
+            't_stt' => (int)$this->request->getVar('t_stt'),
+            't_ank' => (int)$this->request->getVar('t_ank'),
+            't_prg' => (int)$this->request->getVar('t_prg'),
+            't_kes' => (int)$this->request->getVar('t_kes'),
             'acc' => false
         ];
         $this->skimModel->update($id, $data);

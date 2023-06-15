@@ -13,6 +13,7 @@ class RemunTunjangan extends BaseController
 {
     protected $userModel;
     protected $skimModel;
+    protected $santriModel;
     protected $tunjanganModel;
     protected $potonganModel;
 
@@ -87,20 +88,20 @@ class RemunTunjangan extends BaseController
             'id' => $this->request->getVar('id'),
             'nip' => $this->request->getVar('nip'),
             'nama' => $this->request->getVar('nama'),
-            't_jab' => $this->request->getVar('t_jab'),
-            't_stt' => $this->request->getVar('t_stt'),
-            't_ank' => $this->request->getVar('t_ank'),
-            't_rmh' => $this->request->getVar('t_rmh'),
-            't_prg' => $this->request->getVar('t_prg'),
-            't_srg' => $this->request->getVar('t_srg'),
-            't_atr' => $this->request->getVar('t_atr'),
-            't_kes' => $this->request->getVar('t_kes'),
-            't_hra' => $this->request->getVar('t_hra'),
-            't_haj' => $this->request->getVar('t_haj'),
-            't_dka' => $this->request->getVar('t_dka'),
-            't_bns' => $this->request->getVar('t_bns'),
-            't_spc' => $this->request->getVar('t_spc'),
-            't_eks' => $this->request->getVar('t_eks')
+            't_jab' => (int)$this->request->getVar('t_jab'),
+            't_stt' => (int)$this->request->getVar('t_stt'),
+            't_ank' => (int)$this->request->getVar('t_ank'),
+            't_rmh' => (int)$this->request->getVar('t_rmh'),
+            't_prg' => (int)$this->request->getVar('t_prg'),
+            't_srg' => (int)$this->request->getVar('t_srg'),
+            't_atr' => (int)$this->request->getVar('t_atr'),
+            't_kes' => (int)$this->request->getVar('t_kes'),
+            't_hra' => (int)$this->request->getVar('t_hra'),
+            't_haj' => (int)$this->request->getVar('t_haj'),
+            't_dka' => (int)$this->request->getVar('t_dka'),
+            't_bns' => (int)$this->request->getVar('t_bns'),
+            't_spc' => (int)$this->request->getVar('t_spc'),
+            't_eks' => (int)$this->request->getVar('t_eks')
         ];
         $this->tunjanganModel->insert($data);
         flash('Berhasil', 'Menambah Data Tunjangan..');
@@ -112,30 +113,30 @@ class RemunTunjangan extends BaseController
         $data = [
             'nip' => $this->request->getVar('nip'),
             'nama' => $this->request->getVar('nama'),
-            't_jab' => $this->request->getVar('t_jab'),
-            't_stt' => $this->request->getVar('t_stt'),
-            't_ank' => $this->request->getVar('t_ank'),
-            't_rmh' => $this->request->getVar('t_rmh'),
-            't_prg' => $this->request->getVar('t_prg'),
-            't_srg' => $this->request->getVar('t_srg'),
-            't_atr' => $this->request->getVar('t_atr'),
-            't_kes' => $this->request->getVar('t_kes'),
-            't_hra' => $this->request->getVar('t_hra'),
-            't_haj' => $this->request->getVar('t_haj'),
-            't_dka' => $this->request->getVar('t_dka'),
-            't_bns' => $this->request->getVar('t_bns'),
-            't_spc' => $this->request->getVar('t_spc'),
-            't_eks' => $this->request->getVar('t_eks'),
+            't_jab' => (int)$this->request->getVar('t_jab'),
+            't_stt' => (int)$this->request->getVar('t_stt'),
+            't_ank' => (int)$this->request->getVar('t_ank'),
+            't_rmh' => (int)$this->request->getVar('t_rmh'),
+            't_prg' => (int)$this->request->getVar('t_prg'),
+            't_srg' => (int)$this->request->getVar('t_srg'),
+            't_atr' => (int)$this->request->getVar('t_atr'),
+            't_kes' => (int)$this->request->getVar('t_kes'),
+            't_hra' => (int)$this->request->getVar('t_hra'),
+            't_haj' => (int)$this->request->getVar('t_haj'),
+            't_dka' => (int)$this->request->getVar('t_dka'),
+            't_bns' => (int)$this->request->getVar('t_bns'),
+            't_spc' => (int)$this->request->getVar('t_spc'),
+            't_eks' => (int)$this->request->getVar('t_eks'),
             'acc' => false
         ];
         $this->tunjanganModel->update($id, $data);
         $dataPot = [
             'nip' => $this->request->getVar('nip'),
             'nama' => $this->request->getVar('nama'),
-            'p_srg' => $this->request->getVar('t_srg'),
-            'p_atr' => $this->request->getVar('t_atr'),
-            'p_kes' => $this->request->getVar('t_kes'),
-            'p_rmh' => $this->request->getVar('t_rmh'),
+            'p_srg' => (int)$this->request->getVar('t_srg'),
+            'p_atr' => (int)$this->request->getVar('t_atr'),
+            'p_kes' => (int)$this->request->getVar('t_kes'),
+            'p_rmh' => (int)$this->request->getVar('t_rmh'),
         ];
         $pot = $this->potonganModel->where('nip', $data['nip'])->first();
         if ($pot) {

@@ -93,7 +93,7 @@ class OfficePengurus extends BaseController
         if ($this->request->isAJAX()) {
             $santri =  $this->santriModel->find($id);
 
-            $santri = ['grade' => $santri['grade'], 'tunjang' => $santri[$tunj]];
+            $santri = ['istri' => $santri['jml_istri'], 'anak' => $santri['jml_anak'], 'grade' => $santri['grade'], 'tunjang' => $santri[$tunj]];
             $skim = $this->skimModel->find($santri['grade']);
 
             switch ($tunj) {
@@ -101,10 +101,10 @@ class OfficePengurus extends BaseController
                     $data = ['tunjangan' => $skim['t_jab']];
                     break;
                 case 't_stt':
-                    $data = ['tunjangan' => $skim['t_stt']];
+                    $data = ['tunjangan' => $skim['t_stt'] * $santri['istri']];
                     break;
                 case 't_ank':
-                    $data = ['tunjangan' => $skim['t_ank']];
+                    $data = ['tunjangan' => $skim['t_ank'] * $santri['anak']];
                     break;
                 case 't_prg':
                     $data = ['tunjangan' => $skim['t_prg']];
@@ -121,11 +121,11 @@ class OfficePengurus extends BaseController
             if ($santri['tunjang']) {
                 $mydata = ['tunjangan' => 0];
                 $this->santriModel->save(['id' => $id, $tunj => false]);
-                $this->tunjanganModel->save(['id' => $id, $tunj => $mydata['tunjangan']]);
+                $this->tunjanganModel->save(['id' => $id, $tunj => $mydata['tunjangan'], 'acc' => false]);
             } else {
                 $mydata = $data;
                 $this->santriModel->save(['id' => $id, $tunj => true]);
-                $this->tunjanganModel->save(['id' => $id, $tunj => $mydata['tunjangan']]);
+                $this->tunjanganModel->save(['id' => $id, $tunj => $mydata['tunjangan'], 'acc' => false]);
             }
 
             echo number_format($mydata['tunjangan'], 0, ".", ",");
